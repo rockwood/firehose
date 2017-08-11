@@ -16,4 +16,5 @@ config :firehose, Firehose.Repo,
   password: "postgres",
   database: "firehose_test",
   hostname: "localhost",
+  port: 55432,
   pool: Ecto.Adapters.SQL.Sandbox

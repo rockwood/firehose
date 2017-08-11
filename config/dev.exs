@@ -55,4 +55,5 @@ config :firehose, Firehose.Repo,
   password: "postgres",
   database: "firehose_dev",
   hostname: "localhost",
+  port: 55432,
   pool_size: 10
