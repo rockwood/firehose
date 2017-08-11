@@ -1,0 +1,5 @@
+<h2>New Trade</h2>
+
+<%= render "form.html", Map.put(assigns, :action, trade_path(@conn, :create)) %>
+
+<span><%= link "Back", to: trade_path(@conn, :index) %></span>

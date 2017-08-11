@@ -16,7 +16,7 @@ defmodule FirehoseWeb.Router do
   scope "/", FirehoseWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    resources "/", TradeController
   end
 
   # Other scopes may use custom stacks.

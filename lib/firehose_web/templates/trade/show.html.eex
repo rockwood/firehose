@@ -1,0 +1,11 @@
+<h2>Show Trade</h2>
+
+<ul>
+  <li>Trade ID: <%= @trade.trade_id %></li>
+  <li>Sequence: <%= @trade.sequence %></li>
+  <li>Amount: <%= @trade.amount %></li>
+  <li>Price: <%= @trade.price %></li>
+</ul>
+
+<span><%= link "Edit", to: trade_path(@conn, :edit, @trade) %></span>
+<span><%= link "Back", to: trade_path(@conn, :index) %></span>

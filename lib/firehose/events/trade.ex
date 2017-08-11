@@ -5,6 +5,12 @@ defmodule Firehose.Events.Trade do
 
   @primary_key {:timestamp, :naive_datetime, []}
 
+  defimpl Phoenix.Param do
+    def to_param(%{timestamp: timestamp}) do
+      NaiveDateTime.to_iso8601(timestamp)
+    end
+  end
+
   schema "trades" do
     field :amount, :float
     field :price, :decimal
