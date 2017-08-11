@@ -1,20 +1,22 @@
 # Firehose
 
-To start your Phoenix server:
+Demo showing [TimescaleDB](timescale.com) in Phoenix.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+# Setup
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+  * Install docker and docker-compose
+  * `docker-compose up -d`
+  * `mix ecto.create && mix.ecto.migrate`
+  * `mix phx.server`
+  * `open http://localhost:4000`
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+# TimescaleDB
 
-## Learn more
+The `trades` table is stored in TimescaleDB hypertable which optimizes quering data accross time. To
+see, run the query:
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+```sql
+EXPLAIN SELECT * FROM trades;
+```
+
+For more info, see the `[TimescaleDB docs](docs.timescale.com)`
