@@ -6,7 +6,9 @@ Demo showing [TimescaleDB](timescale.com) in Phoenix.
 
   * Install docker and docker-compose
   * `docker-compose up -d`
+  * `mix deps.get`
   * `mix ecto.create && mix.ecto.migrate`
+  * `cd assets && npm install && cd -`
   * `mix phx.server`
   * `open http://localhost:4000`
 
@@ -19,4 +21,4 @@ see, run the query:
 EXPLAIN SELECT * FROM trades;
 ```
 
-For more info, see the `[TimescaleDB docs](docs.timescale.com)`
+For more info, see the [TimescaleDB docs](docs.timescale.com)
