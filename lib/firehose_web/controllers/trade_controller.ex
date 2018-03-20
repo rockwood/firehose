@@ -5,7 +5,7 @@ defmodule FirehoseWeb.TradeController do
   alias Firehose.Events.Trade
 
   def index(conn, _params) do
-    trades = Events.list_trades()
+    trades = Events.latest_trades()
     render(conn, "index.html", trades: trades)
   end
 

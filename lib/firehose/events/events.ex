@@ -21,6 +21,12 @@ defmodule Firehose.Events do
     Repo.all(Trade)
   end
 
+  def latest_trades(count \\ 100) do
+    count
+    |> Trade.Query.latest()
+    |> Repo.all()
+  end
+
   @doc """
   Gets a single trade.
 

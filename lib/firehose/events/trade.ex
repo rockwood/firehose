@@ -26,4 +26,12 @@ defmodule Firehose.Events.Trade do
     |> cast(attrs, [:sequence, :trade_id, :timestamp, :price, :amount])
     |> validate_required([:sequence, :trade_id, :timestamp, :price, :amount])
   end
+
+  defmodule Query do
+    import Ecto.Query
+
+    def latest(query \\ Trade, count) do
+      from query, order_by: [desc: :timestamp], limit: ^count
+    end
+  end
 end
